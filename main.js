@@ -8,7 +8,7 @@ $(document).ready(function(){
     $("form").on("submit", function(e){
         e.preventDefault()
         let newphoto = $("#new-photo").val()
-        const NewItem = $('<li></li>')
+        const NewItem = $('<li style="display: none;"></li>')
         $(`<img src="${newphoto}" alt="New item">`).appendTo(NewItem)
         $(`<div class="overlay-image">
         <a href="${newphoto}" title="Real size image" target="_blank">
@@ -16,5 +16,7 @@ $(document).ready(function(){
         </a>
         </div>`).appendTo(NewItem)
         $(NewItem).appendTo("ul")
+        $(NewItem).fadeIn()
+        $("#new-photo").val("")
     })
 });
