@@ -1,0 +1,144 @@
+:root {
+    --shade1: #f2f9f1;
+    --shade2: #ddeedf;
+    --shade3: #b6cdbd; 
+    --shade4: #5c715e; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    background-color: var(--shade3);;
+    padding: 16px;
+    color: var(--shade1);
+    display: flex;
+    border-bottom: 16px solid var(--shade4);
+    justify-content: center;
+}
+
+header h1{
+    text-shadow: .7px .7px 1.7px var(--shade4);
+    text-transform: uppercase;
+}
+
+header button{
+    padding: 0 8px;
+}
+
+header button, .add, .cancel{
+    margin-left: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    appearance: none;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+header button, .add{
+    background-color: #2ea44f;
+}
+
+.cancel{
+    background-color: #cf142b;
+}
+
+.cancel:hover{
+    background-color: #e16473;
+}
+
+header button:hover, .add:hover{
+    background-color: #2c974b;
+    transition: 0.3s;
+}
+
+header button:focus, .add:focus{
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+}
+
+header button:disabled, .add:disabled{
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+header button:active, .add:active{
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+header button:focus:not(:focus-visible):not(.focus-visible), .add:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+form{
+    background-color: var(--shade1);
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+}
+
+input, form button{
+    padding:8px;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li{
+    max-width: 25%;
+    /*
+    display: flex;
+    */
+    list-style: none;
+    position:relative;
+    max-height: 280px;
+    overflow-y: hidden;
+}
+ul li img, .overlay-image{
+    width: 100%;
+}
+
+.overlay-image{
+    padding: 16px;
+    background-color: rgba(0, 0, 0, .7);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    opacity: 0;
+    transition: all ease 0.5s;
+
+}
+
+.overlay-image a{
+    color:white;
+    text-decoration: none;
+}
+
+.overlay-image:hover{
+    opacity: 1;
+}
